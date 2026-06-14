@@ -141,7 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroTotal) {
         const total = calcularRetornoTotal();
         const num = parseFloat(total);
-        heroTotal.textContent = (num > 0 ? '+' : '') + total;
+        // Math.trunc corta los decimales (ej. 14.85 pasa a ser 14, -5.80 pasa a ser -5)
+        heroTotal.textContent = (num > 0 ? '+' : '') + Math.trunc(num) + '%';
     }
 
     inicializarGauge();
