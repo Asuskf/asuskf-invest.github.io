@@ -149,7 +149,7 @@ nav ul li a:hover { color: var(--gold-metallic); }
 
 .banner-img {
     width: 100%;
-    height: clamp(380px, 55vw, 560px);
+    height: clamp(380px, 55vw, 460px);
     object-fit: cover;
     object-position: center top;
     filter: brightness(0.55);
@@ -809,4 +809,132 @@ nav ul li a:hover { color: var(--gold-metallic); }
     /* Modal */
     .close-modal { top: 12px; right: 20px; }
     .modal-content { width: 95%; }
+}
+/* =========================================
+   SECCIÓN METODOLOGÍA (CAJITAS UX)
+   ========================================= */
+
+.methodology-section {
+    padding: 80px 0;
+    border-top: 1px solid var(--border-gold);
+    border-bottom: 1px solid var(--border-gold);
+    background-color: #07100d; /* Fondo ligeramente distinto para separar secciones */
+}
+
+/* El grid usará auto-fit para ser responsive automáticamente sin media queries extra */
+.methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+}
+
+/* Estilo de la cajita */
+.methodology-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    border-radius: var(--radius);
+    padding: 32px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.methodology-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold-metallic);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Círculo dorado para el número del paso */
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: rgba(212, 175, 55, 0.08);
+    color: var(--gold-metallic);
+    font-family: var(--font-mono);
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 50%;
+    border: 1px solid var(--border-gold);
+    margin-bottom: 20px;
+}
+
+.methodology-card h3 {
+    font-size: 18px;
+    color: var(--text-white);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: none; /* Por si hereda estilos de otras tarjetas */
+    padding-bottom: 0;
+}
+
+.methodology-card p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* =========================================
+   FILOSOFÍA DE INVERSIÓN (CAJITAS)
+   ========================================= */
+
+/* Grid automático: se adapta a móvil, tablet o PC sin media queries extras */
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Estilo base de la tarjeta */
+.philosophy-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    border-radius: var(--radius);
+    padding: 40px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.philosophy-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold-metallic);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    background-color: #15241f; /* Aclara ligeramente el fondo */
+}
+
+/* Ícono ilustrativo superior */
+.philosophy-card .card-icon {
+    font-size: 38px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.philosophy-card h3 {
+    font-size: 18px;
+    color: var(--gold-metallic);
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+    border-bottom: none; /* Previene herencias indeseadas */
+    padding-bottom: 0;
+}
+
+.philosophy-card p {
+    font-size: 14.5px;
+    color: var(--text-light);
+    line-height: 1.7;
 }
