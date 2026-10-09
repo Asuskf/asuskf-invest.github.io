@@ -1,0 +1,4 @@
+# Claude Code
+# apple-design no trae licencia (su texto es de las Apple HIG): uso local, no se publica.
+.claude/skills/apple-design/
+.claude/settings.local.json

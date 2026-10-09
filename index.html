@@ -1,301 +1,491 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/images/logo.png" type="image/png">
-    <title>Quant investing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>document.documentElement.classList.add('js');</script>
+
+    <!-- SEO -->
+    <title>Asuskf Investing | Inversión cuantitativa con IA en eToro</title>
+    <meta name="description" content="Portafolio público de inversión cuantitativa con IA en eToro (@asuskf): rentabilidad neta mensual desde 2022, control de riesgo y análisis en video.">
+    <link rel="canonical" href="https://asuskf.github.io/asuskf-invest.github.io/">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Asuskf Investing">
+    <meta name="theme-color" content="#0a1714">
+    <meta name="color-scheme" content="dark">
+
+    <!-- Open Graph / redes sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_LA">
+    <meta property="og:site_name" content="Asuskf Investing">
+    <meta property="og:title" content="Asuskf Investing | Inversión cuantitativa con IA en eToro">
+    <meta property="og:description" content="Portafolio público de inversión cuantitativa con IA en eToro (@asuskf): rentabilidad neta mensual desde 2022, control de riesgo y análisis en video.">
+    <meta property="og:url" content="https://asuskf.github.io/asuskf-invest.github.io/">
+    <meta property="og:image" content="https://asuskf.github.io/asuskf-invest.github.io/assets/images/og-asuskf-investing.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Asuskf Investing: inversión cuantitativa e inteligencia artificial, portafolio público en eToro">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Asuskf Investing | Inversión cuantitativa con IA en eToro">
+    <meta name="twitter:description" content="Portafolio público de inversión cuantitativa con IA en eToro (@asuskf): rentabilidad neta mensual desde 2022, control de riesgo y análisis en video.">
+    <meta name="twitter:image" content="https://asuskf.github.io/asuskf-invest.github.io/assets/images/og-asuskf-investing.jpg">
+    <meta name="twitter:image:alt" content="Asuskf Investing: inversión cuantitativa e inteligencia artificial, portafolio público en eToro">
+
+    <!-- Iconos -->
+    <link rel="icon" href="assets/images/asuskf-badge-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="assets/images/asuskf-badge-64.png" sizes="64x64" type="image/png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+    <!-- Fuentes locales (marca) y estilos -->
+    <link rel="preload" href="assets/fonts/playfair-display.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/roboto.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/tokens.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Datos estructurados (Organization, WebSite, FAQPage, Dataset). Los VideoObject los genera main.js desde las tarjetas de video. -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://asuskf.github.io/asuskf-invest.github.io/#organization",
+                "name": "Asuskf Investing",
+                "alternateName": ["Asuskf", "@asuskf"],
+                "url": "https://asuskf.github.io/asuskf-invest.github.io/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://asuskf.github.io/asuskf-invest.github.io/assets/images/logo.png",
+                    "width": 500,
+                    "height": 500
+                },
+                "image": "https://asuskf.github.io/asuskf-invest.github.io/assets/images/og-asuskf-investing.jpg",
+                "description": "Investigación e inversión cuantitativa con inteligencia artificial. Portafolio público en eToro (@asuskf) con rentabilidad neta mensual publicada desde 2022.",
+                "slogan": "No buscamos predecir el mercado. Buscamos identificar ventajas estadísticas repetibles y gestionarlas con disciplina.",
+                "knowsAbout": ["Inversión cuantitativa", "Inteligencia artificial aplicada a inversiones", "Machine learning", "Gestión del riesgo", "Análisis macroeconómico", "Copy trading"],
+                "sameAs": [
+                    "https://www.etoro.com/people/asuskf",
+                    "https://www.youtube.com/@Asuskf_Investing",
+                    "https://www.linkedin.com/company/asuskf-investing/"
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://asuskf.github.io/asuskf-invest.github.io/#website",
+                "url": "https://asuskf.github.io/asuskf-invest.github.io/",
+                "name": "Asuskf Investing",
+                "inLanguage": "es",
+                "publisher": { "@id": "https://asuskf.github.io/asuskf-invest.github.io/#organization" }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://asuskf.github.io/asuskf-invest.github.io/#webpage",
+                "url": "https://asuskf.github.io/asuskf-invest.github.io/",
+                "name": "Asuskf Investing | Inversión cuantitativa con IA en eToro",
+                "description": "Portafolio público de inversión cuantitativa con IA en eToro (@asuskf): rentabilidad neta mensual desde 2022, control de riesgo y análisis en video.",
+                "inLanguage": "es",
+                "isPartOf": { "@id": "https://asuskf.github.io/asuskf-invest.github.io/#website" },
+                "about": { "@id": "https://asuskf.github.io/asuskf-invest.github.io/#organization" },
+                "primaryImageOfPage": {
+                    "@type": "ImageObject",
+                    "url": "https://asuskf.github.io/asuskf-invest.github.io/assets/images/og-asuskf-investing.jpg",
+                    "width": 1200,
+                    "height": 630
+                },
+                "dateModified": "2026-10-08",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "¿Qué es Asuskf Investing?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Asuskf Investing es un proyecto de investigación e inversión cuantitativa que gestiona un portafolio público en eToro bajo el usuario @asuskf. Combina modelos de machine learning, análisis estadístico y lectura macroeconómica para tomar decisiones sistemáticas con control de riesgo, y publica su rentabilidad neta mensual desde 2022." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Qué rentabilidad ha tenido el portafolio?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Según la matriz de rendimiento publicada en esta página, la rentabilidad neta anual fue de −23.78% en 2022, +40.59% en 2023, +18.60% en 2024 y +17.96% en 2025. El año en curso se actualiza cada mes en la misma matriz. Los rendimientos pasados no garantizan resultados futuros." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Cómo puedo copiar el portafolio de Asuskf en eToro?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Desde el perfil público de @asuskf en eToro puedes usar la función de copia de la plataforma (CopyTrader), que replica las posiciones del portafolio en proporción al monto que asignes. Antes de copiar, revisa en eToro los montos mínimos, las comisiones, los riesgos y la disponibilidad del servicio en tu país." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Qué metodología de inversión utiliza?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Un proceso sistemático de cinco fases: datos (mercados globales, fundamentales y macroeconomía), procesamiento con modelos estadísticos y machine learning, detección de señales con ventaja probabilística, control dinámico del riesgo y ejecución con monitoreo continuo del portafolio." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Qué significa la precisión de trading?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Es el porcentaje de operaciones cerradas con ganancia según las estadísticas de eToro. Mide la frecuencia de aciertos, no el tamaño de las ganancias o de las pérdidas, por eso debe leerse junto con la rentabilidad mensual y anual." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿El contenido de Asuskf Investing es una recomendación de inversión?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "No. El contenido es informativo y de análisis; no constituye asesoramiento ni recomendación de inversión. Invertir conlleva riesgo de pérdida de capital y los rendimientos pasados no garantizan resultados futuros. Invierte solo lo que puedas permitirte perder." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Dónde publica Asuskf Investing sus análisis?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "En el canal de YouTube @Asuskf_Investing (videos y Shorts sobre empresas y mercados), en LinkedIn y en el perfil público de eToro, donde se puede seguir la evolución del portafolio." }
+                    }
+                ]
+            },
+            {
+                "@type": "Dataset",
+                "@id": "https://asuskf.github.io/asuskf-invest.github.io/#dataset-rendimiento",
+                "name": "Rentabilidad neta mensual del portafolio Asuskf Investing en eToro",
+                "description": "Rentabilidad neta mensual y anual, en porcentaje, del portafolio público @asuskf en eToro desde enero de 2022. Se publica y actualiza cada mes en la matriz de rendimiento de esta página.",
+                "url": "https://asuskf.github.io/asuskf-invest.github.io/#dashboard",
+                "creator": { "@id": "https://asuskf.github.io/asuskf-invest.github.io/#organization" },
+                "temporalCoverage": "2022-01/..",
+                "variableMeasured": "Rentabilidad neta mensual (%)",
+                "isAccessibleForFree": true,
+                "inLanguage": "es"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
 
     <header class="navbar">
-        <div class="logo-container">
-            <img src="assets/images/logo.png" alt="Logo Asuskf" class="logo-img">
+        <a href="#inicio" class="logo-container">
+            <img src="assets/images/asuskf-badge-128.png" alt="" class="logo-img" width="42" height="42">
             <span class="logo-text">Asuskf Investing</span>
-        </div>
-        <nav>
-            <ul>
+        </a>
+        <nav class="site-nav" aria-label="Secciones">
+            <ul class="nav-links">
                 <li><a href="#dashboard">Rendimiento</a></li>
                 <li><a href="#contenido">Insights</a></li>
-                <li><a href="https://www.etoro.com/people/asuskf" class="btn-etoro-nav" target="_blank">Copiar Portafolio</a></li>
+                <li><a href="#metodologia">Metodología</a></li>
+                <li><a href="#preguntas">FAQ</a></li>
             </ul>
         </nav>
+        <a href="https://www.etoro.com/people/asuskf" class="btn-primary btn-etoro-nav" target="_blank" rel="noopener" data-cta="etoro-nav">Copiar<span class="cta-long">&nbsp;portafolio</span></a>
     </header>
 
-    <section id="inicio" class="hero-container">
-        <div class="banner-wrapper">
-            <img src="assets/images/banner.png" alt="Banner ASUSKF Capital Research" class="banner-img">
-            <div class="banner-overlay">
-                <div class="banner-text">
-                    <div class="hero-eyebrow">INVERSIÓN CUANTITATIVA E INTELIGENCIA ARTIFICIAL</div>
-                    <h1>ASUSKF INVESTING</h1> 
-                    <h3>Investment Research • Market Insights • Long-Term Investing</h3>
-                    <p class="hero-description">
-                        Invertimos con inteligencia artificial, análisis cuantitativo y visión macroeconómica para identificar oportunidades con ventaja estadística y proteger el capital en cualquier entorno de mercado.
+    <main id="main">
+        <section id="inicio" class="hero-container" aria-labelledby="hero-title">
+            <div class="banner-wrapper">
+                <picture>
+                    <source type="image/webp" srcset="assets/images/banner.webp">
+                    <img src="assets/images/banner.png" alt="" class="banner-img" width="1584" height="396" fetchpriority="high">
+                </picture>
+                <div class="banner-overlay">
+                    <div class="banner-text">
+                        <p class="hero-eyebrow">Inversión cuantitativa e inteligencia artificial</p>
+                        <h1 id="hero-title">Asuskf Investing</h1>
+                        <p class="hero-tagline" lang="en">Investment Research • Market Insights • Long-Term Investing</p>
+                        <p class="hero-description">
+                            Gestionamos un portafolio público en eToro con inteligencia artificial, análisis cuantitativo y visión macroeconómica para identificar oportunidades con ventaja estadística y proteger el capital en cualquier entorno de mercado.
+                        </p>
+                        <div class="banner-divider" aria-hidden="true"></div>
+                        <p class="subtitle">Gestión Sistemática • Control de Riesgo • Decisiones Basadas en Datos</p>
+
+                        <dl class="hero-stats">
+                            <div class="hero-stat">
+                                <dt class="hero-stat-label">Retorno acumulado <span data-kpi="period">2022–2026</span></dt>
+                                <dd class="hero-stat-value" data-kpi="total">+76%</dd>
+                            </div>
+                            <div class="hero-stat">
+                                <dt class="hero-stat-label">Track record público</dt>
+                                <dd class="hero-stat-value">5 Años</dd>
+                            </div>
+                            <div class="hero-stat">
+                                <dt class="hero-stat-label">Metodología propia</dt>
+                                <dd class="hero-stat-value">AI + Quant</dd>
+                            </div>
+                        </dl>
+
+                        <a href="https://www.etoro.com/people/asuskf" target="_blank" rel="noopener" class="btn-primary btn-large btn-hero" data-cta="etoro-hero">
+                            Ver portafolio público
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="filosofia" class="investment-philosophy" aria-labelledby="filosofia-title">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-eyebrow">Cómo invertimos</p>
+                    <h2 id="filosofia-title">Filosofía de Inversión</h2>
+                    <p>
+                        No buscamos predecir el mercado.
+                        Buscamos identificar ventajas estadísticas repetibles
+                        y gestionarlas con disciplina.
                     </p>
-                    <div class="banner-divider"></div>
-                    <p class="subtitle">Gestión Sistemática • Control de Riesgo • Decisiones Basadas en Datos</p>
+                </div>
+                <div class="philosophy-grid">
+                    <article class="philosophy-card reveal delay-1">
+                        <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
+                        <h3>Investigación Cuantitativa</h3>
+                        <p>Modelos predictivos basados en machine learning, análisis estadístico y comportamiento de mercado.</p>
+                    </article>
 
-                    <div class="hero-stats">
-                        <div class="hero-stat">
-                            <span class="hero-stat-value" id="hero-total-return">+104%</span>
-                            <span class="hero-stat-label">Retorno Acumulado</span>
-                        </div>
-                        <div class="hero-stat-divider"></div>
-                        <div class="hero-stat">
-                            <span class="hero-stat-value">5 Años</span>
-                            <span class="hero-stat-label">Track Record Público</span>
-                        </div>
-                        <div class="hero-stat-divider"></div>
-                        <div class="hero-stat">
-                            <span class="hero-stat-value">AI + Quant</span>
-                            <span class="hero-stat-label">Metodología Propia</span>
-                        </div>
+                    <article class="philosophy-card reveal delay-2">
+                        <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+                        <h3>Gestión del Riesgo</h3>
+                        <p>Control de exposición, diversificación estratégica y monitoreo continuo de volatilidad.</p>
+                    </article>
+
+                    <article class="philosophy-card reveal delay-3">
+                        <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>
+                        <h3>Ejecución Sistemática</h3>
+                        <p>Decisiones respaldadas por datos, no por emociones ni especulación.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="dashboard" class="dashboard-section" aria-labelledby="dashboard-title">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-eyebrow">Resultados verificados</p>
+                    <h2 id="dashboard-title">Rendimiento Cuantitativo</h2>
+                    <p>Rentabilidad neta del portafolio público @asuskf en eToro, con métricas potenciadas por modelos predictivos e inteligencia artificial.</p>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card card-mes reveal delay-1">
+                        <h3>Rendimiento YTD (<span data-kpi="ytd-year">2026</span>)</h3>
+                        <div class="metric-big positive" data-kpi="ytd">+17.54%</div>
+                        <p class="metric-sub">Superando el benchmark institucional.</p>
+                        <div class="metric-badge positive-badge">▲ Por encima del S&amp;P 500</div>
                     </div>
-                    
-                    <a href="https://www.etoro.com/people/asuskf" target="_blank" class="btn-primary btn-large btn-hero">
-                        Ver Portafolio Público
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="investment-philosophy">
-        <div class="container">
-            <div class="section-header">
-                <h2>Filosofía de Inversión</h2>
-                <p>
-                    No buscamos predecir el mercado.
-                    Buscamos identificar ventajas estadísticas repetibles
-                    y gestionarlas con disciplina.
-                </p>
-            </div>
-            <div class="philosophy-grid">
-                <div class="philosophy-card reveal delay-1">
-                    <div class="card-icon">📊</div>
-                    <h3>Investigación Cuantitativa</h3>
-                    <p>Modelos predictivos basados en machine learning, análisis estadístico y comportamiento de mercado.</p>
-                </div>
-                
-                <div class="philosophy-card reveal delay-2">
-                    <div class="card-icon">🛡️</div>
-                    <h3>Gestión del Riesgo</h3>
-                    <p>Control de exposición, diversificación estratégica y monitoreo continuo de volatilidad.</p>
-                </div>
-                
-                <div class="philosophy-card reveal delay-3">
-                    <div class="card-icon">⚙️</div>
-                    <h3>Ejecución Sistemática</h3>
-                    <p>Decisiones respaldadas por datos, no por emociones ni especulación.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="dashboard" class="dashboard-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Rendimiento Cuantitativo</h2>
-                <p>Métricas de inversión potenciadas por modelos predictivos e Inteligencia Artificial.</p>
-            </div>
-
-            <div class="dashboard-grid">
-                <div class="card card-mes reveal delay-1">
-                    <h3>Rendimiento YTD (2026)</h3>
-                    <div class="metric-big positive" id="ytd-display">—</div>
-                    <p class="metric-sub">Superando el benchmark institucional.</p>
-                    <div class="metric-badge positive-badge">▲ Por encima del S&P 500</div>
-                </div>
-
-                <div class="card card-precision reveal delay-2">
-                    <h3>Precisión de Trading</h3>
-                    <div class="gauge-container">
-                        <svg class="gauge" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                                    <stop offset="0%" style="stop-color:#9A3B3B;" />
-                                    <stop offset="50%" style="stop-color:#d4af37;" />
-                                    <stop offset="100%" style="stop-color:#388E3C;" />
-                                </linearGradient>
-                            </defs>
-                            <path class="gauge-bg" d="M 10 52 A 40 40 0 0 1 90 52" />
-                            <path id="gauge-fill" class="gauge-fill" d="M 10 52 A 40 40 0 0 1 90 52" stroke="url(#grad1)" />
-                            <path id="gauge-needle" d="M 50 52 L 48 48 L 27 51 L 48 54 Z" fill="white" />
-                        </svg>
-                        <div class="gauge-value" id="win-rate-text">0%</div>
+                    <div class="card card-precision reveal delay-2">
+                        <h3>Precisión de Trading</h3>
+                        <div class="gauge-container" data-gauge="97.5">
+                            <svg class="gauge" viewBox="0 0 100 60" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="gauge-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" class="gauge-stop-low" />
+                                        <stop offset="50%" class="gauge-stop-mid" />
+                                        <stop offset="100%" class="gauge-stop-high" />
+                                    </linearGradient>
+                                </defs>
+                                <path class="gauge-bg" d="M 10 52 A 40 40 0 0 1 90 52" />
+                                <path class="gauge-fill" d="M 10 52 A 40 40 0 0 1 90 52" />
+                                <path class="gauge-needle" d="M 50 52 L 48 48 L 27 51 L 48 54 Z" />
+                            </svg>
+                            <div class="gauge-value">97.50%</div>
+                        </div>
+                        <p class="metric-sub">Operaciones ganadoras verificadas en eToro</p>
                     </div>
-                    <p class="metric-sub">Operaciones ganadoras verificadas eToro</p>
-                </div>
 
-                <div class="card card-compras reveal delay-3">
-                    <h3>Movimientos Estratégicos</h3>
-                    <ul class="trade-list">
-                        <li>
-                            <div class="trade-row">
+                    <div class="card card-compras reveal delay-3">
+                        <h3>Movimientos Estratégicos</h3>
+                        <ul class="trade-list">
+                            <li class="trade-row">
                                 <span><span class="buy">COMPRA</span> RMS.PA</span>
                                 <span>Artículos de lujo.</span>
-                                <span class="trade-date">Jun 2025</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="trade-row">
+                                <time class="trade-date" datetime="2025-06">Jun 2025</time>
+                            </li>
+                            <li class="trade-row">
                                 <span><span class="buy">COMPRA</span> EXO.NV</span>
                                 <span>Innovación tecnológica.</span>
-                                <span class="trade-date">Jun 2025</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="trade-row">
+                                <time class="trade-date" datetime="2025-06">Jun 2025</time>
+                            </li>
+                            <li class="trade-row">
                                 <span><span class="buy">COMPRA</span> XLU</span>
                                 <span>Infraestructura defensiva.</span>
-                                <span class="trade-date">Jun 2025</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="trade-row">
+                                <time class="trade-date" datetime="2025-06">Jun 2025</time>
+                            </li>
+                            <li class="trade-row">
                                 <span><span class="buy">COMPRA</span> RACE.MI</span>
                                 <span>Lujo premium.</span>
-                                <span class="trade-date">Jun 2025</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="trade-row">
+                                <time class="trade-date" datetime="2025-06">Jun 2025</time>
+                            </li>
+                            <li class="trade-row">
                                 <span><span class="buy">COMPRA</span> CEG</span>
                                 <span>Infraestructura energética.</span>
-                                <span class="trade-date">Jun 2025</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="card card-matriz reveal delay-1">
-                    <h3>Matriz de Rendimiento Mensual / Anual</h3>
-                    <div class="table-responsive">
-                        <table class="matriz-table">
-                            <thead>
-                                <tr>
-                                    <th>Año</th><th>Ene</th><th>Feb</th><th>Mar</th><th>Abr</th><th>May</th><th>Jun</th><th>Jul</th><th>Ago</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dic</th><th>Total</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
+                                <time class="trade-date" datetime="2025-06">Jun 2025</time>
+                            </li>
+                        </ul>
                     </div>
-                    <p class="matrix-disclaimer">* Rentabilidades netas. Rendimientos pasados no garantizan resultados futuros.</p>
-                </div>
 
-                <div id="contenido" class="card card-youtube reveal delay-1">
-                    <h3>Último Video de YouTube</h3>
-                    <div class="video-container custom-thumbnail">
-                        <a href="https://www.youtube.com/watch?v=MOt5LrbOhiI" target="_blank" rel="noopener noreferrer" class="youtube-thumbnail-link">
-                            <img src="https://img.youtube.com/vi/MOt5LrbOhiI/maxresdefault.jpg" alt="¿Sobrevivirá Berkshire Hathaway sin Warren Buffett? 🐘 El Test de Estrés Definitivo" style="width: 100%; max-width: 560px; height: auto;">
-                            <div class="play-button">▶</div>
-                        </a>
+                    <div class="card card-matriz reveal delay-1">
+                        <h3>Matriz de Rendimiento Mensual / Anual</h3>
+                        <div class="table-responsive">
+                            <!-- FUENTE ÚNICA DE DATOS: edita solo estas filas (año más reciente arriba).
+                                 Acepta "-2.26%", "−2.26%" o "-2.26"; los meses futuros van vacíos.
+                                 main.js calcula colores, YTD, retorno acumulado y la fecha de actualización. -->
+                            <table class="matriz-table" id="matriz">
+                                <caption class="visually-hidden">Rentabilidad neta mensual y anual del portafolio Asuskf Investing en eToro, en porcentaje</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Año</th><th scope="col">Ene</th><th scope="col">Feb</th><th scope="col">Mar</th><th scope="col">Abr</th><th scope="col">May</th><th scope="col">Jun</th><th scope="col">Jul</th><th scope="col">Ago</th><th scope="col">Sep</th><th scope="col">Oct</th><th scope="col">Nov</th><th scope="col">Dic</th><th scope="col">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><th scope="row">2026</th><td>1.84%</td><td>0.46%</td><td>−5.80%</td><td>11.69%</td><td>9.95%</td><td>−1.25%</td><td>−2.26%</td><td>3.55%</td><td>−0.63%</td><td></td><td></td><td></td><td>17.54%</td></tr>
+                                    <tr><th scope="row">2025</th><td>1.96%</td><td>−1.47%</td><td>−6.58%</td><td>0.79%</td><td>5.60%</td><td>6.49%</td><td>1.81%</td><td>1.05%</td><td>4.55%</td><td>3.23%</td><td>−0.93%</td><td>0.81%</td><td>17.96%</td></tr>
+                                    <tr><th scope="row">2024</th><td>1.11%</td><td>4.45%</td><td>1.42%</td><td>−5.78%</td><td>7.31%</td><td>6.28%</td><td>−0.33%</td><td>2.14%</td><td>2.33%</td><td>−1.34%</td><td>2.58%</td><td>−2.26%</td><td>18.60%</td></tr>
+                                    <tr><th scope="row">2023</th><td>9.76%</td><td>−1.07%</td><td>6.28%</td><td>−0.06%</td><td>5.56%</td><td>5.71%</td><td>2.80%</td><td>−2.33%</td><td>−6.89%</td><td>−2.02%</td><td>12.75%</td><td>5.77%</td><td>40.59%</td></tr>
+                                    <tr><th scope="row">2022</th><td>−1.20%</td><td>−3.79%</td><td>2.90%</td><td>−10.50%</td><td>−1.13%</td><td>−8.90%</td><td>11.90%</td><td>−5.71%</td><td>−12.04%</td><td>6.41%</td><td>5.46%</td><td>−7.19%</td><td>−23.78%</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="matrix-disclaimer">
+                            Datos hasta <time data-kpi="updated" datetime="2026-09">septiembre de 2026</time>.
+                            * Rentabilidades netas. Rendimientos pasados no garantizan resultados futuros.
+                        </p>
                     </div>
-                    <p class="sub-text">Análisis de la nueva era de Berkshire Hathaway y su test de estrés financiero.</p>
+
+                    <!-- Videos: al cambiarlos, actualiza href, imagen, título, descripción, fecha (datetime) y data-duration.
+                         main.js publica el VideoObject (datos estructurados) a partir de esta tarjeta. -->
+                    <article id="contenido" class="card card-youtube reveal delay-1" data-video-id="MOt5LrbOhiI" data-duration="PT8M50S">
+                        <h3>Último Video de YouTube</h3>
+                        <div class="video-container custom-thumbnail">
+                            <a href="https://www.youtube.com/watch?v=MOt5LrbOhiI" target="_blank" rel="noopener" class="youtube-thumbnail-link" data-cta="youtube-video">
+                                <img src="https://img.youtube.com/vi/MOt5LrbOhiI/maxresdefault.jpg" alt="Miniatura: ¿Sobrevivirá Berkshire Hathaway sin Warren Buffett? El test de estrés definitivo" width="1280" height="720" loading="lazy" decoding="async">
+                                <span class="play-button" aria-hidden="true">▶</span>
+                            </a>
+                        </div>
+                        <p class="video-title">¿Sobrevivirá Berkshire Hathaway sin Warren Buffett? El test de estrés definitivo</p>
+                        <p class="video-meta"><time datetime="2026-09-13T04:00:06-07:00">13 sep 2026</time> · 8:50</p>
+                        <p class="sub-text">Análisis de la nueva era de Berkshire Hathaway y su test de estrés financiero.</p>
+                    </article>
+
+                    <article class="card card-youtube reveal delay-2" data-video-id="Go4yszVjIx8" data-duration="PT1M17S">
+                        <h3>Short Destacado</h3>
+                        <div class="video-container custom-thumbnail">
+                            <a href="https://youtube.com/shorts/Go4yszVjIx8" target="_blank" rel="noopener" class="youtube-thumbnail-link" data-cta="youtube-short">
+                                <img src="https://img.youtube.com/vi/Go4yszVjIx8/maxresdefault.jpg" alt="Miniatura: Berkshire Hathaway, ¿compra maestra o banderas rojas?" width="1280" height="720" loading="lazy" decoding="async">
+                                <span class="play-button" aria-hidden="true">▶</span>
+                            </a>
+                        </div>
+                        <p class="video-title">Berkshire Hathaway: ¿compra maestra o banderas rojas?</p>
+                        <p class="video-meta"><time datetime="2026-09-16T05:00:22-07:00">16 sep 2026</time> · 1:17</p>
+                        <p class="sub-text">¿Sigue siendo buena compra o esconde banderas rojas? Análisis rápido de su ecosistema.</p>
+                    </article>
                 </div>
 
-                <div class="card card-youtube reveal delay-2">
-                    <h3>Short Destacado</h3>
-                    <div class="video-container custom-thumbnail">
-                        <a href="https://youtube.com/shorts/Go4yszVjIx8" target="_blank" rel="noopener noreferrer" class="youtube-thumbnail-link">
-                            <img src="https://img.youtube.com/vi/Go4yszVjIx8/maxresdefault.jpg" alt="Berkshire Hathaway: ¿Compra Maestra o Banderas Rojas? 🚩" style="width: 100%; max-width: 560px; height: auto;">
-                            <div class="play-button">▶</div>
-                        </a>
-                    </div>
-                    <p class="sub-text">¿Sigue siendo buena compra o esconde banderas rojas? Análisis rápido de su ecosistema.</p>
+                <div class="cta-center reveal delay-3">
+                    <p class="cta-pre">¿Listo para invertir con una estrategia probada?</p>
+                    <a href="https://www.etoro.com/people/asuskf" class="btn-primary btn-large" target="_blank" rel="noopener" data-cta="etoro-dashboard">Invertir con @Asuskf en eToro</a>
+                    <p class="cta-disclaimer">La inversión conlleva riesgos. Sólo invierte lo que puedas permitirte perder.</p>
                 </div>
             </div>
+        </section>
 
-            <div class="cta-center reveal delay-3">
-                <p class="cta-pre">¿Listo para invertir con una estrategia probada?</p>
-                <a href="https://www.etoro.com/people/asuskf" class="btn-primary btn-large" target="_blank">Invertir con @Asuskf en eToro</a>
-                <p class="cta-disclaimer">La inversión conlleva riesgos. Sólo invierte lo que puedas permitirte perder.</p>
-            </div>
-        </div>
-    </section>
+        <section id="metodologia" class="methodology-section" aria-labelledby="metodologia-title">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-eyebrow">Proceso</p>
+                    <h2 id="metodologia-title">Metodología</h2>
+                    <p>Nuestro proceso sistemático de inversión en 5 fases.</p>
+                </div>
 
-    <section class="methodology-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Metodología</h2>
-                <p>Nuestro proceso sistemático de inversión en 5 fases.</p>
+                <ol class="methodology-grid">
+                    <li class="methodology-card reveal delay-1">
+                        <span class="step-number" aria-hidden="true">1</span>
+                        <h3>Datos</h3>
+                        <p>Mercados globales, fundamentales y macroeconomía.</p>
+                    </li>
+                    <li class="methodology-card reveal delay-2">
+                        <span class="step-number" aria-hidden="true">2</span>
+                        <h3>Procesamiento</h3>
+                        <p>Modelos estadísticos y machine learning.</p>
+                    </li>
+                    <li class="methodology-card reveal delay-3">
+                        <span class="step-number" aria-hidden="true">3</span>
+                        <h3>Señales</h3>
+                        <p>Detección de oportunidades con ventaja probabilística.</p>
+                    </li>
+                    <li class="methodology-card reveal delay-1">
+                        <span class="step-number" aria-hidden="true">4</span>
+                        <h3>Riesgo</h3>
+                        <p>Control dinámico de exposición y volatilidad.</p>
+                    </li>
+                    <li class="methodology-card reveal delay-2">
+                        <span class="step-number" aria-hidden="true">5</span>
+                        <h3>Ejecución</h3>
+                        <p>Construcción y monitoreo continuo del portafolio.</p>
+                    </li>
+                </ol>
             </div>
-            
-            <div class="methodology-grid">
-                <div class="methodology-card reveal delay-1">
-                    <span class="step-number">1</span>
-                    <h3>Datos</h3>
-                    <p>Mercados globales, fundamentales y macroeconomía.</p>
+        </section>
+
+        <!-- Las respuestas deben coincidir con el FAQPage del <head>. -->
+        <section id="preguntas" class="faq-section" aria-labelledby="preguntas-title">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-eyebrow">Preguntas frecuentes</p>
+                    <h2 id="preguntas-title">Lo que conviene saber antes de invertir</h2>
                 </div>
-                
-                <div class="methodology-card reveal delay-2">
-                    <span class="step-number">2</span>
-                    <h3>Procesamiento</h3>
-                    <p>Modelos estadísticos y machine learning.</p>
-                </div>
-                
-                <div class="methodology-card reveal delay-3">
-                    <span class="step-number">3</span>
-                    <h3>Señales</h3>
-                    <p>Detección de oportunidades con ventaja probabilística.</p>
-                </div>
-                
-                <div class="methodology-card reveal delay-1">
-                    <span class="step-number">4</span>
-                    <h3>Riesgo</h3>
-                    <p>Control dinámico de exposición y volatilidad.</p>
-                </div>
-                
-                <div class="methodology-card reveal delay-2">
-                    <span class="step-number">5</span>
-                    <h3>Ejecución</h3>
-                    <p>Construcción y monitoreo continuo del portafolio.</p>
+
+                <div class="faq-list">
+                    <details class="faq-item" name="faq" open>
+                        <summary><h3>¿Qué es Asuskf Investing?</h3></summary>
+                        <div class="faq-answer"><p>Asuskf Investing es un proyecto de investigación e inversión cuantitativa que gestiona un portafolio público en eToro bajo el usuario @asuskf. Combina modelos de machine learning, análisis estadístico y lectura macroeconómica para tomar decisiones sistemáticas con control de riesgo, y publica su rentabilidad neta mensual desde 2022.</p></div>
+                    </details>
+                    <details class="faq-item" name="faq">
+                        <summary><h3>¿Qué rentabilidad ha tenido el portafolio?</h3></summary>
+                        <div class="faq-answer"><p>Según la <a href="#dashboard">matriz de rendimiento</a> publicada en esta página, la rentabilidad neta anual fue de <span class="num">−23.78%</span> en 2022, <span class="num">+40.59%</span> en 2023, <span class="num">+18.60%</span> en 2024 y <span class="num">+17.96%</span> en 2025. El año en curso se actualiza cada mes en la misma matriz. Los rendimientos pasados no garantizan resultados futuros.</p></div>
+                    </details>
+                    <details class="faq-item" name="faq">
+                        <summary><h3>¿Cómo puedo copiar el portafolio de Asuskf en eToro?</h3></summary>
+                        <div class="faq-answer"><p>Desde el <a href="https://www.etoro.com/people/asuskf" target="_blank" rel="noopener" data-cta="etoro-faq">perfil público de @asuskf en eToro</a> puedes usar la función de copia de la plataforma (CopyTrader), que replica las posiciones del portafolio en proporción al monto que asignes. Antes de copiar, revisa en eToro los montos mínimos, las comisiones, los riesgos y la disponibilidad del servicio en tu país.</p></div>
+                    </details>
+                    <details class="faq-item" name="faq">
+                        <summary><h3>¿Qué metodología de inversión utiliza?</h3></summary>
+                        <div class="faq-answer"><p>Un proceso sistemático de cinco fases: datos (mercados globales, fundamentales y macroeconomía), procesamiento con modelos estadísticos y machine learning, detección de señales con ventaja probabilística, control dinámico del riesgo y ejecución con monitoreo continuo del portafolio.</p></div>
+                    </details>
+                    <details class="faq-item" name="faq">
+                        <summary><h3>¿Qué significa la precisión de trading?</h3></summary>
+                        <div class="faq-answer"><p>Es el porcentaje de operaciones cerradas con ganancia según las estadísticas de eToro. Mide la frecuencia de aciertos, no el tamaño de las ganancias o de las pérdidas, por eso debe leerse junto con la rentabilidad mensual y anual.</p></div>
+                    </details>
+                    <details class="faq-item" name="faq">
+                        <summary><h3>¿El contenido de Asuskf Investing es una recomendación de inversión?</h3></summary>
+                        <div class="faq-answer"><p>No. El contenido es informativo y de análisis; no constituye asesoramiento ni recomendación de inversión. Invertir conlleva riesgo de pérdida de capital y los rendimientos pasados no garantizan resultados futuros. Invierte solo lo que puedas permitirte perder.</p></div>
+                    </details>
+                    <details class="faq-item" name="faq">
+                        <summary><h3>¿Dónde publica Asuskf Investing sus análisis?</h3></summary>
+                        <div class="faq-answer"><p>En el canal de YouTube <a href="https://www.youtube.com/@Asuskf_Investing" target="_blank" rel="noopener">@Asuskf_Investing</a> (videos y Shorts sobre empresas y mercados), en <a href="https://www.linkedin.com/company/asuskf-investing/" target="_blank" rel="noopener">LinkedIn</a> y en el perfil público de eToro, donde se puede seguir la evolución del portafolio.</p></div>
+                    </details>
                 </div>
             </div>
-        </div>
-    </section>
-    <footer class="footer-section reveal delay-1">
+        </section>
+    </main>
+
+    <footer class="footer-section">
         <div class="container footer-grid">
             <div class="footer-brand">
                 <div class="logo-container">
-                    <img src="assets/images/logo.png" alt="Logo Asuskf" class="logo-img">
-                    <span class="logo-text">Asuskf Analytics</span>
+                    <img src="assets/images/asuskf-badge-128.png" alt="" class="logo-img" width="42" height="42" loading="lazy">
+                    <span class="logo-text">Asuskf Investing</span>
                 </div>
-                <p class="footer-description">Estrategias de inversión cuantitativa impulsadas por Inteligencia Artificial y análisis de datos profundo.</p>
+                <p class="footer-description">Estrategias de inversión cuantitativa impulsadas por inteligencia artificial y análisis de datos profundo.</p>
             </div>
             <div class="footer-social">
-                <h3>Comunidad Corporativa</h3>
+                <h2 class="footer-title">Síguenos</h2>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/company/asuskf-investing/" target="_blank" rel="noopener noreferrer" class="social-btn">
-                        <span class="social-icon">in</span> LinkedIn
+                    <a href="https://www.linkedin.com/company/asuskf-investing/" target="_blank" rel="noopener" class="social-btn" data-cta="linkedin-footer">
+                        <span class="social-icon" aria-hidden="true">in</span> LinkedIn
                     </a>
-                    <a href="https://www.youtube.com/@Asuskf_Investing" target="_blank" rel="noopener noreferrer" class="social-btn">
-                        <span class="social-icon">▶</span> YouTube
+                    <a href="https://www.youtube.com/@Asuskf_Investing" target="_blank" rel="noopener" class="social-btn" data-cta="youtube-footer">
+                        <span class="social-icon" aria-hidden="true">▶</span> YouTube
                     </a>
-                    <a href="https://www.etoro.com/people/asuskf" target="_blank" rel="noopener noreferrer" class="social-btn etoro-btn">
-                        <span class="social-icon">e</span> eToro
+                    <a href="https://www.etoro.com/people/asuskf" target="_blank" rel="noopener" class="social-btn" data-cta="etoro-footer">
+                        <span class="social-icon" aria-hidden="true">e</span> eToro
                     </a>
                 </div>
             </div>
         </div>
-        
+
         <div class="footer-legal">
             <div class="container">
                 <p>&copy; 2026 Asuskf Investing. Todos los derechos reservados.</p>
-                <p>La inversión conlleva riesgos. Los rendimientos pasados no garantizan resultados futuros. Modelos desarrollados con análisis avanzado de datos.</p>
+                <p>Contenido informativo y de análisis: no constituye asesoramiento ni recomendación de inversión. La inversión conlleva riesgo de pérdida de capital y los rendimientos pasados no garantizan resultados futuros.</p>
+                <p>eToro es una marca de su respectivo titular; su mención no implica respaldo. Modelos desarrollados con análisis avanzado de datos.</p>
             </div>
         </div>
     </footer>
 
-    <div id="imageModal" class="modal">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="imgModalOutput">
-        <div id="caption">Análisis de Asuskf</div>
-    </div>
-
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,18 @@
+# Asuskf Investing
+
+> Proyecto de investigación e inversión cuantitativa con inteligencia artificial. Gestiona un portafolio público en eToro (usuario @asuskf) y publica su rentabilidad neta mensual y anual desde enero de 2022, junto con su metodología de cinco fases y análisis de empresas en video.
+
+El contenido es informativo y de análisis: no constituye asesoramiento ni recomendación de inversión. Los rendimientos pasados no garantizan resultados futuros.
+
+## Sitio
+
+- [Inicio](https://asuskf.github.io/asuskf-invest.github.io/): qué es Asuskf Investing, filosofía de inversión y acceso al portafolio público.
+- [Rendimiento cuantitativo](https://asuskf.github.io/asuskf-invest.github.io/#dashboard): matriz de rentabilidad neta mensual y anual desde 2022 (fuente de las cifras), rendimiento del año en curso, precisión de trading y movimientos estratégicos.
+- [Metodología](https://asuskf.github.io/asuskf-invest.github.io/#metodologia): datos, procesamiento con machine learning, señales, control de riesgo y ejecución.
+- [Preguntas frecuentes](https://asuskf.github.io/asuskf-invest.github.io/#preguntas): rentabilidad por año, cómo copiar el portafolio en eToro, qué mide la precisión de trading y avisos de riesgo.
+
+## Perfiles oficiales
+
+- [Portafolio público en eToro (@asuskf)](https://www.etoro.com/people/asuskf)
+- [Canal de YouTube @Asuskf_Investing](https://www.youtube.com/@Asuskf_Investing)
+- [LinkedIn de Asuskf Investing](https://www.linkedin.com/company/asuskf-investing/)

@@ -1,0 +1,155 @@
+/* ============================================================================
+   Asuskf Investing · tokens de marca (fuente única de color, tipo, espacio, radio y movimiento)
+   ----------------------------------------------------------------------------
+   Origen: assets/source/sitio/style.css (sitio público, 2026-10-08). Modo OSCURO = default (como el sitio).
+   Modo CLARO = derivado para documentos/impresión, validado por contraste (ver SKILL.md §02).
+   Prefijo: --ak-  (Asuskf). Nunca escribir hex/px literales en un entregable: usar var(--ak-…).
+   Fuentes: requieren el @font-face de references/web-html.md (archivos locales en assets/fonts/).
+   ============================================================================ */
+
+:root,
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* ── superficies (bosque) ── */
+  --ak-bg:            #0a1714;   /* Bosque 900 · fondo de página */
+  --ak-bg-deep:       #050d0a;   /* Bosque 950 · pie, modales, fondo de infografías */
+  --ak-surface:       #111e1a;   /* tarjeta */
+  --ak-surface-2:     #12211d;   /* tarjeta elevada / filas alternas */
+  --ak-brand-green:   #123d28;   /* Verde insignia (banner) · bloques de marca, nunca texto */
+  --ak-nav-bg:        rgba(10, 23, 20, 0.97);   /* barra superior translúcida (con blur 12px) */
+  --ak-overlay:       rgba(5, 13, 10, 0.96);    /* fondo de modal */
+
+  /* ── oro (acento) ── */
+  --ak-gold:          #d4af37;   /* Oro metálico · títulos, eyebrows, CTA, bordes de acento */
+  --ak-gold-light:    #e8cc6a;   /* hover de CTA */
+  --ak-gold-deep:     #b5952f;   /* pressed */
+  --ak-gold-ink:      #d4af37;   /* oro usado COMO TEXTO (en oscuro = oro metálico) */
+  --ak-on-gold:       #0a1714;   /* texto sobre fondo oro (8.7:1) */
+
+  /* ── texto ── */
+  --ak-text:          #c8d4d0;   /* cuerpo (12.0:1) */
+  --ak-text-muted:    #7a9490;   /* secundario, etiquetas (5.6:1) */
+  --ak-text-strong:   #ffffff;   /* titulares en hero, cifras KPI */
+
+  /* ── bordes y sombras ── */
+  --ak-border:        rgba(212, 175, 55, 0.20);
+  --ak-border-hover:  rgba(212, 175, 55, 0.50);
+  --ak-divider:       rgba(255, 255, 255, 0.05);
+  --ak-shadow:        0 4px 20px rgba(0, 0, 0, 0.35);
+  --ak-shadow-hover:  0 8px 32px rgba(0, 0, 0, 0.50);
+  --ak-glow-gold:     0 6px 20px rgba(212, 175, 55, 0.30);
+
+  /* ── estado financiero (SOLO para ganancia/pérdida, siempre con signo o flecha) ── */
+  --ak-gain:          #4caf70;   /* 6.7:1 */
+  --ak-loss:          #e57373;   /* 6.1:1 */
+  --ak-gain-bg:       rgba(76, 175, 112, 0.10);
+  --ak-loss-bg:       rgba(229, 115, 115, 0.10);
+
+  /* ── heatmap de rendimientos (divergente rojo ↔ neutro ↔ verde; la cifra va SIEMPRE en la celda) ── */
+  --ak-heat-loss-strong: #5c1f1f;  --ak-heat-loss-strong-ink: #ffb0b0;
+  --ak-heat-loss:        #7a2f2f;  --ak-heat-loss-ink:        #ffd0d0;
+  --ak-heat-neutral:     rgba(255, 255, 255, 0.03);
+  --ak-heat-gain:        #2d6e35;  --ak-heat-gain-ink:        #c8ffd0;
+  --ak-heat-gain-strong: #1a5225;  --ak-heat-gain-strong-ink: #a0f0b0;
+
+  /* ── series de gráficas (categórico, orden fijo; validado con dataviz/validate_palette.js sobre --ak-surface) ── */
+  --ak-series-1:      #a8862a;   /* oro serie (más oscuro que el oro de marca para la banda de luminosidad) */
+  --ak-series-2:      #3d8bd4;   /* azul */
+  --ak-series-3:      #c96b45;   /* terracota */
+  --ak-series-4:      #a77fd6;   /* violeta */
+  --ak-grid:          rgba(255, 255, 255, 0.06);
+  --ak-axis:          #7a9490;
+  --ak-band:          rgba(212, 175, 55, 0.08);   /* sombreado de periodos (p. ej. "buena empresa") */
+}
+
+:root[data-theme="light"],
+[data-theme="light"] {
+  color-scheme: light;
+  --ak-bg:            #f5f3ec;   /* Marfil · fondo de documento */
+  --ak-bg-deep:       #ece8dc;
+  --ak-surface:       #ffffff;
+  --ak-surface-2:     #f9f7f1;
+  --ak-brand-green:   #123d28;   /* igual en ambos temas: bandas de marca (encabezado, portada) */
+  --ak-nav-bg:        rgba(245, 243, 236, 0.97);
+  --ak-overlay:       rgba(10, 23, 20, 0.85);
+
+  --ak-gold:          #d4af37;   /* solo RELLENOS y bordes: como texto en claro da 1.9:1 */
+  --ak-gold-light:    #e8cc6a;
+  --ak-gold-deep:     #b5952f;
+  --ak-gold-ink:      #7a5f0e;   /* oro tinta: eyebrows/títulos dorados sobre claro (5.5:1) */
+  --ak-on-gold:       #0a1714;
+
+  --ak-text:          #1c2b27;
+  --ak-text-muted:    #4d625d;   /* 5.9:1 */
+  --ak-text-strong:   #0a1714;
+
+  --ak-border:        rgba(122, 95, 14, 0.25);
+  --ak-border-hover:  rgba(122, 95, 14, 0.55);
+  --ak-divider:       rgba(10, 23, 20, 0.08);
+  --ak-shadow:        0 2px 12px rgba(10, 23, 20, 0.08);
+  --ak-shadow-hover:  0 6px 24px rgba(10, 23, 20, 0.14);
+  --ak-glow-gold:     0 6px 20px rgba(181, 149, 47, 0.25);
+
+  --ak-gain:          #1f7a45;   /* 4.8:1 */
+  --ak-loss:          #b3403f;   /* 5.1:1 */
+  --ak-gain-bg:       rgba(31, 122, 69, 0.10);
+  --ak-loss-bg:       rgba(179, 64, 63, 0.10);
+
+  --ak-heat-loss-strong: #e8a5a5;  --ak-heat-loss-strong-ink: #4a1414;
+  --ak-heat-loss:        #f3cccc;  --ak-heat-loss-ink:        #5c1f1f;
+  --ak-heat-neutral:     rgba(10, 23, 20, 0.03);
+  --ak-heat-gain:        #cfe8d6;  --ak-heat-gain-ink:        #1a5225;
+  --ak-heat-gain-strong: #9fd1ae;  --ak-heat-gain-strong-ink: #0e3b1a;
+
+  --ak-series-1:      #a8862a;
+  --ak-series-2:      #2f78c4;
+  --ak-series-3:      #c05f36;
+  --ak-series-4:      #8a5cc9;
+  --ak-grid:          rgba(10, 23, 20, 0.07);
+  --ak-axis:          #4d625d;
+  --ak-band:          rgba(181, 149, 47, 0.10);
+}
+
+:root {
+  /* ── tipografía ── */
+  --ak-font-heading:  'Playfair Display', Georgia, serif;          /* títulos, nombre de marca, encabezados de fila */
+  --ak-font-body:     'Roboto', system-ui, sans-serif;              /* texto, navegación, botones, etiquetas */
+  --ak-font-mono:     'Roboto Mono', ui-monospace, monospace;       /* TODA cifra financiera: KPI, tablas, fechas, % */
+
+  --ak-fs-hero:       clamp(38px, 6vw, 72px);   /* h1 de portada, MAYÚSCULAS, tracking 4px */
+  --ak-fs-h2:         clamp(28px, 4vw, 40px);
+  --ak-fs-h3:         20px;
+  --ak-fs-kpi:        clamp(36px, 4vw, 48px);   /* cifra grande (mono, 700, tracking −1px) */
+  --ak-fs-stat:       clamp(20px, 2.5vw, 28px); /* cifra de hero (mono, 700) */
+  --ak-fs-body:       15px;
+  --ak-fs-small:      13px;
+  --ak-fs-label:      11px;                     /* etiquetas de tarjeta: MAYÚSCULAS, tracking 1.5px */
+  --ak-fs-eyebrow:    12px;                     /* eyebrow: MAYÚSCULAS, tracking 3px, oro */
+  --ak-fs-micro:      10px;                     /* avisos legales, disclaimers (itálica) */
+  --ak-lh-body:       1.65;
+  --ak-track-eyebrow: 3px;
+  --ak-track-label:   1.5px;
+  --ak-track-nav:     1.2px;
+
+  /* ── espacio, radio, layout ── */
+  --ak-space-1: 4px;  --ak-space-2: 8px;  --ak-space-3: 12px;  --ak-space-4: 16px;
+  --ak-space-5: 24px; --ak-space-6: 32px; --ak-space-7: 48px;  --ak-space-8: 80px;
+  --ak-radius:        6px;      /* tarjetas, botones, inputs */
+  --ak-radius-sm:     3px;      /* badges */
+  --ak-radius-pill:   999px;
+  --ak-container:     1300px;
+  --ak-gutter:        24px;
+  --ak-hit-min:       44px;     /* objetivo táctil mínimo (Apple HIG) */
+
+  /* ── movimiento ── */
+  --ak-ease:          ease;
+  --ak-dur-fast:      0.2s;
+  --ak-dur:           0.25s;
+  --ak-dur-reveal:    0.65s;    /* aparición: opacity 0→1 + translateY(24px→0) */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --ak-dur-fast: 0s; --ak-dur: 0s; --ak-dur-reveal: 0s; }
+}
