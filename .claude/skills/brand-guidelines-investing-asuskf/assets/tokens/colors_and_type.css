@@ -47,12 +47,15 @@
   --ak-gain-bg:       rgba(76, 175, 112, 0.10);
   --ak-loss-bg:       rgba(229, 115, 115, 0.10);
 
-  /* ── heatmap de rendimientos (divergente rojo ↔ neutro ↔ verde; la cifra va SIEMPRE en la celda) ── */
-  --ak-heat-loss-strong: #5c1f1f;  --ak-heat-loss-strong-ink: #ffb0b0;
-  --ak-heat-loss:        #7a2f2f;  --ak-heat-loss-ink:        #ffd0d0;
+  /* ── heatmap de rendimientos (divergente rojo ↔ neutro ↔ verde; la cifra va SIEMPRE en la celda) ──
+        pasos por magnitud: weak |x| < 1 % · normal 1–7 % · strong > 7 %. En oscuro, más magnitud = más luz. */
+  --ak-heat-loss-strong: #b24a4a;  --ak-heat-loss-strong-ink: #ffffff;   /* 5.3:1 */
+  --ak-heat-loss:        #7a2f2f;  --ak-heat-loss-ink:        #ffd0d0;   /* 6.7:1 */
+  --ak-heat-loss-weak:   #3d2626;  --ak-heat-loss-weak-ink:   #f0c8c8;   /* 9.2:1 */
   --ak-heat-neutral:     rgba(255, 255, 255, 0.03);
-  --ak-heat-gain:        #2d6e35;  --ak-heat-gain-ink:        #c8ffd0;
-  --ak-heat-gain-strong: #1a5225;  --ak-heat-gain-strong-ink: #a0f0b0;
+  --ak-heat-gain-weak:   #1d3b2a;  --ak-heat-gain-weak-ink:   #b9e4c4;   /* 8.7:1 */
+  --ak-heat-gain:        #2d6e35;  --ak-heat-gain-ink:        #c8ffd0;   /* 5.5:1 */
+  --ak-heat-gain-strong: #387f43;  --ak-heat-gain-strong-ink: #ffffff;   /* 4.9:1 */
 
   /* ── series de gráficas (categórico, orden fijo; validado con dataviz/validate_palette.js sobre --ak-surface) ── */
   --ak-series-1:      #a8862a;   /* oro serie (más oscuro que el oro de marca para la banda de luminosidad) */
@@ -97,11 +100,13 @@
   --ak-gain-bg:       rgba(31, 122, 69, 0.10);
   --ak-loss-bg:       rgba(179, 64, 63, 0.10);
 
-  --ak-heat-loss-strong: #e8a5a5;  --ak-heat-loss-strong-ink: #4a1414;
-  --ak-heat-loss:        #f3cccc;  --ak-heat-loss-ink:        #5c1f1f;
+  --ak-heat-loss-strong: #e8a5a5;  --ak-heat-loss-strong-ink: #4a1414;   /* 7.4:1 */
+  --ak-heat-loss:        #f3cccc;  --ak-heat-loss-ink:        #5c1f1f;   /* 8.6:1 */
+  --ak-heat-loss-weak:   #f9e6e6;  --ak-heat-loss-weak-ink:   #5c1f1f;   /* 10.5:1 */
   --ak-heat-neutral:     rgba(10, 23, 20, 0.03);
-  --ak-heat-gain:        #cfe8d6;  --ak-heat-gain-ink:        #1a5225;
-  --ak-heat-gain-strong: #9fd1ae;  --ak-heat-gain-strong-ink: #0e3b1a;
+  --ak-heat-gain-weak:   #e8f3eb;  --ak-heat-gain-weak-ink:   #1a5225;   /* 8.1:1 */
+  --ak-heat-gain:        #cfe8d6;  --ak-heat-gain-ink:        #1a5225;   /* 7.1:1 */
+  --ak-heat-gain-strong: #9fd1ae;  --ak-heat-gain-strong-ink: #0e3b1a;   /* 7.4:1 */
 
   --ak-series-1:      #a8862a;
   --ak-series-2:      #2f78c4;

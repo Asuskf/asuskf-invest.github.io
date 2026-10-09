@@ -1,5 +1,15 @@
 # Historial — brand-guidelines-investing-asuskf
 
+## 1.3 · 2026-10-09
+Revisión del sitio con la skill `impeccable` (critique: 22/36) y decisiones del usuario:
+- **Sin eyebrows** (gana `impeccable` sobre la regla anterior de la marca). Encabezado de sección = h2 + párrafo.
+- **Heatmap por magnitud:** nuevos tokens `--ak-heat-{gain,loss}-weak(-ink)`; en el tema oscuro los pasos strong ahora son más
+  claros que los normales (antes eran más oscuros y los meses extremos se perdían). Contrastes 4.9–10.5:1. Regenerados `tokens.json` y `*.mplstyle`.
+- **Hero:** banner completo sobre franja verde insignia (el `object-fit: cover` recortaba "@Asuskf" y eToro, contra la regla 6);
+  KPI solo trazables a la matriz. El velo queda en desuso.
+- Sitio: prueba (matriz) justo después del hero, videos en su propia sección, Filosofía fusionada con Metodología, CTA únicos
+  ("Copiar el portafolio en eToro"), cierre en verde insignia, iconos dibujados en lugar de glifos.
+
 ## 1.2 · 2026-10-08
 - Instalada en el repositorio del sitio público (`asuskf-invest.github.io/.claude/skills/`) junto con `apple-design`; descripción y
   alcance ampliados a ese repositorio.

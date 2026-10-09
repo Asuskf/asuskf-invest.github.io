@@ -6,9 +6,10 @@ El contenido es informativo y de análisis: no constituye asesoramiento ni recom
 
 ## Sitio
 
-- [Inicio](https://asuskf.github.io/asuskf-invest.github.io/): qué es Asuskf Investing, filosofía de inversión y acceso al portafolio público.
+- [Inicio](https://asuskf.github.io/asuskf-invest.github.io/): qué es Asuskf Investing, retorno acumulado, meses publicados y acceso al portafolio público.
 - [Rendimiento cuantitativo](https://asuskf.github.io/asuskf-invest.github.io/#dashboard): matriz de rentabilidad neta mensual y anual desde 2022 (fuente de las cifras), rendimiento del año en curso, precisión de trading y movimientos estratégicos.
-- [Metodología](https://asuskf.github.io/asuskf-invest.github.io/#metodologia): datos, procesamiento con machine learning, señales, control de riesgo y ejecución.
+- [Análisis en video](https://asuskf.github.io/asuskf-invest.github.io/#contenido): últimos análisis de empresas y mercados del canal de YouTube.
+- [Metodología](https://asuskf.github.io/asuskf-invest.github.io/#metodologia): filosofía de inversión y proceso de cinco fases (datos, procesamiento con machine learning, señales, control de riesgo y ejecución).
 - [Preguntas frecuentes](https://asuskf.github.io/asuskf-invest.github.io/#preguntas): rentabilidad por año, cómo copiar el portafolio en eToro, qué mide la precisión de trading y avisos de riesgo.
 
 ## Perfiles oficiales

@@ -61,7 +61,6 @@ h1,h2,h3{font-family:var(--ak-font-heading);color:var(--ak-gold-ink)}
   background:var(--ak-nav-bg);backdrop-filter:blur(12px);border-bottom:1px solid var(--ak-border)}
 .ak-nav a{color:var(--ak-text);font-size:var(--ak-fs-small);text-transform:uppercase;letter-spacing:var(--ak-track-nav);font-weight:500;text-decoration:none}
 .ak-nav a:hover,.ak-nav a[aria-current=page]{color:var(--ak-gold-ink)}
-.ak-eyebrow{font-size:var(--ak-fs-eyebrow);text-transform:uppercase;letter-spacing:var(--ak-track-eyebrow);color:var(--ak-gold-ink);font-weight:500}
 .ak-btn{display:inline-flex;align-items:center;min-height:var(--ak-hit-min);padding:0 22px;border-radius:var(--ak-radius);background:var(--ak-gold);
   color:var(--ak-on-gold);font-weight:700;font-size:var(--ak-fs-small);text-transform:uppercase;letter-spacing:1px;text-decoration:none;border:0;
   transition:background-color var(--ak-dur) var(--ak-ease),transform var(--ak-dur-fast) var(--ak-ease),box-shadow var(--ak-dur) var(--ak-ease)}
@@ -96,9 +95,12 @@ h1,h2,h3{font-family:var(--ak-font-heading);color:var(--ak-gold-ink)}
 .ak-heat td{font-family:var(--ak-font-mono);font-size:12px;text-align:center;padding:6px}
 .ak-heat td:first-child{font-family:var(--ak-font-heading);font-weight:700;color:var(--ak-text);text-align:left}
 .ak-heat th{color:var(--ak-gold-ink);font-size:var(--ak-fs-label);text-transform:uppercase;letter-spacing:.5px}
+/* pasos por magnitud: g0/l0 |x| < 1 %, g1/l1 1–7 %, g2/l2 > 7 % */
 .ak-heat .g2{background:var(--ak-heat-gain-strong);color:var(--ak-heat-gain-strong-ink)}
 .ak-heat .g1{background:var(--ak-heat-gain);color:var(--ak-heat-gain-ink)}
+.ak-heat .g0{background:var(--ak-heat-gain-weak);color:var(--ak-heat-gain-weak-ink)}
 .ak-heat .n {background:var(--ak-heat-neutral);color:var(--ak-text-muted)}
+.ak-heat .l0{background:var(--ak-heat-loss-weak);color:var(--ak-heat-loss-weak-ink)}
 .ak-heat .l1{background:var(--ak-heat-loss);color:var(--ak-heat-loss-ink)}
 .ak-heat .l2{background:var(--ak-heat-loss-strong);color:var(--ak-heat-loss-strong-ink)}
 ```

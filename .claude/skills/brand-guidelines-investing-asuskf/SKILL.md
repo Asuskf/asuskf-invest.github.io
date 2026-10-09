@@ -5,7 +5,7 @@ description: Identidad visual de Asuskf Investing (inversión cuantitativa e IA)
 
 # Asuskf Investing — Guía de identidad visual
 
-> **Versión** 1.2 · **Fecha** 2026-10-08 · **Alcance:** repositorio FinTKG y sitio público asuskf-invest.github.io · historial en `CHANGELOG.md`.
+> **Versión** 1.3 · **Fecha** 2026-10-08 · **Alcance:** repositorio FinTKG y sitio público asuskf-invest.github.io · historial en `CHANGELOG.md`.
 >
 > **Canon de origen = el sitio público** https://asuskf.github.io/asuskf-invest.github.io/ (copia del 2026-10-08 en
 > `assets/source/sitio/`, procedencia y SHA-256 en `assets/source/FUENTES.md`). Esta skill es su **exportación para agentes**:
@@ -58,7 +58,7 @@ Todos los colores son variables en `:root` / `[data-theme="dark"]` (default, com
 | `assets/logos/asuskf-badge.png` (500 px, fondo transparente) | encabezados grandes, portadas, impresión |
 | `asuskf-badge-256.png` · `-128.png` · `-64.png` | web y documentos (128 para la barra superior @2x) |
 | `asuskf-badge-32.png` | favicon |
-| `assets/banner/asuskf-banner.png` (1584×396) | portada/cabecera ancha (estilo LinkedIn/YouTube); texto encima solo con el velo del §07 |
+| `assets/banner/asuskf-banner.png` (1584×396) | portada/cabecera ancha (estilo LinkedIn/YouTube); se muestra **completo**, sin recorte (`object-fit: cover` lo recorta) |
 
 - **Bloqueo de marca:** insignia (42 px de alto en la barra) + "Asuskf Investing" en Playfair Display 700, 20 px, oro, tracking 1px.
   La palabra se compone en texto; la insignia es siempre la imagen.
@@ -79,7 +79,7 @@ Todos los colores son variables en `:root` / `[data-theme="dark"]` (default, com
 | Bosque tarjeta | `--ak-surface` | `#111E1A` | tarjetas |
 | Bosque elevado | `--ak-surface-2` | `#12211D` | tarjetas elevadas, filas alternas |
 | **Verde insignia** | `--ak-brand-green` | `#123D28` | bloques de marca (banner, encabezado de Excel/PDF) |
-| **Oro metálico** | `--ak-gold` | `#D4AF37` | acento: títulos, eyebrows, CTA, bordes activos |
+| **Oro metálico** | `--ak-gold` | `#D4AF37` | acento: títulos, CTA, bordes activos |
 | Oro claro | `--ak-gold-light` | `#E8CC6A` | hover |
 | Oro profundo | `--ak-gold-deep` | `#B5952F` | pressed |
 | Oro tinta (claro) | `--ak-gold-ink` | `#7A5F0E` | texto dorado sobre fondo claro |
@@ -105,7 +105,7 @@ verde/rojo de estado solo donde hay datos de rendimiento.
 | Bosque sobre botón oro | 8.7:1 ✔ | | Oro de marca sobre marfil | **1.9:1 ✖ (prohibido como texto)** |
 | Ganancia / pérdida sobre Bosque | 6.7 / 6.1 ✔ | | Ganancia / pérdida sobre blanco | 5.4 / 5.6 ✔ |
 | Blanco sobre verde insignia | 12.2:1 ✔ | | Texto fuerte #0A1714 sobre marfil | 16.5:1 ✔ |
-| Números en celdas del heatmap (8 combinaciones, ambos temas) | 5.5–8.6:1 ✔ | | | |
+| Números en celdas del heatmap (12 combinaciones, 3 pasos × 2 signos × 2 temas) | 4.9–10.5:1 ✔ | | | |
 
 ### Regla del oro como texto
 
@@ -117,10 +117,11 @@ cerca (borde inferior, barra lateral). Nunca texto blanco sobre oro: el botón d
 | Rol | Familia | Pesos / tratamiento |
 |---|---|---|
 | Títulos, nombre de marca, encabezados de fila en matrices | **Playfair Display** (serif) | 400/700; h1 de portada en MAYÚSCULAS, tracking 4 px, blanco |
-| Texto, navegación, botones, etiquetas | **Roboto** | 300 (subtítulos), 400 (cuerpo, line-height 1.65), 500 (nav, eyebrow), 700 (botones) |
+| Texto, navegación, botones, etiquetas | **Roboto** | 300 (subtítulos), 400 (cuerpo, line-height 1.65), 500 (nav), 700 (botones) |
 | **Cifras financieras** (KPI, tablas, fechas, %, precios) | **Roboto Mono** | 400/700, tabulares; KPI 700 con tracking −1px |
 
-- **Eyebrow:** Roboto 500, 12 px, MAYÚSCULAS, tracking 3 px, oro (oro tinta en claro).
+- **Sin eyebrows:** no se pone una etiqueta pequeña sobre los títulos (decisión del usuario 2026-10-09, revisión con `impeccable`):
+  el h2 habla solo. Las palabras clave van en el propio título (p. ej. una segunda línea del h1 en Playfair).
 - **Etiqueta de tarjeta:** Roboto 11 px, MAYÚSCULAS, tracking 1.5 px, oro.
 - **Navegación:** Roboto 500, 13 px, MAYÚSCULAS, tracking 1.2 px; hover en oro.
 - **Avisos legales:** Roboto 10-11 px itálica, color apagado.
@@ -140,13 +141,16 @@ cerca (borde inferior, barra lateral). Nunca texto blanco sobre oro: el botón d
   CTA dorado a la derecha.
 - **Botón primario:** fondo oro, texto bosque, 700, MAYÚSCULAS, radio 6 px, alto ≥ 44 px; hover oro claro + sube 1 px + brillo dorado.
   Secundario: fantasma con borde dorado.
-- **Hero:** banner con velo `linear-gradient(100deg, bosque 82 % → 30 % → transparente)`, eyebrow dorado, h1 Playfair blanco en
-  MAYÚSCULAS, subtítulo Roboto 300 tracking 2 px, **filete dorado que se desvanece**, fila de 3 KPI separados por filetes verticales.
+- **Hero (desde 1.3):** franja `--ak-brand-green` con el banner **completo** (máx. 1300 px, sin velo ni recorte; su fondo es el mismo
+  verde, así que la franja lo continúa); debajo, sobre fondo liso: h1 Playfair blanco en MAYÚSCULAS con segunda línea en Playfair oro,
+  **filete dorado que se desvanece**, un párrafo, el CTA y KPI **trazables** a la matriz (retorno acumulado, meses publicados).
+  Nada de cifras de relleno ("AI + Quant") ni promesas que los datos contradigan.
 - **Tarjeta:** `--ak-surface`, borde dorado 20 %, radio 6 px, sombra; hover borde 50 %.
 - **KPI:** Roboto Mono 700 grande; positivo en verde, negativo en rojo, con su signo; subtítulo apagado 12 px.
 - **Badge de estado:** fondo del color de estado al 10 %, texto del color de estado, radio 3 px.
 - **Matriz de rendimientos (heatmap):** primera columna en Playfair, celdas en Roboto Mono con el número visible, escala
-  roja-neutra-verde de 5 pasos (`--ak-heat-*`), columna "Total" en negrita.
+  divergente por magnitud (`--ak-heat-*`): weak |x| < 1 %, normal 1–7 %, strong > 7 %; en oscuro más magnitud = más luz. Signo +/− en
+  todas las celdas, columna "Total" en negrita; en pantallas estrechas Año y Total quedan fijos (`position: sticky`).
 - **Gauge:** semicírculo, pista oscura, aguja; valor en Roboto Mono 700. Relleno oro por defecto; **en el sitio público el gauge de
   precisión conserva su degradado rojo → oro → verde** (#9A3B3B → oro → #388E3C), excepción a la regla 7 decidida por el usuario (2026-10-08).
 - **Lista de operaciones:** fecha en mono apagado; "COMPRA" verde / "VENTA" roja en 11 px 700 (texto + color).
@@ -161,9 +165,10 @@ cerca (borde inferior, barra lateral). Nunca texto blanco sobre oro: el botón d
 ## 07 — Layout
 
 - Contenedor máximo **1300 px**, gutter 24 px. Grid de **6 columnas** para tableros (tarjetas de 2, 3 o 6 columnas, como el sitio).
-- Secciones con 80 px arriba / 60 px abajo; encabezado de sección centrado: eyebrow + h2 + párrafo apagado (máx. 560 px).
+- Secciones con 80 px arriba / 60 px abajo; encabezado de sección centrado: h2 + párrafo apagado (máx. 60ch).
 - Radio 6 px en tarjetas/botones, 3 px en badges, 4 px en contenedores de medios.
-- Únicos degradados permitidos: el **velo del hero** y el **filete dorado que se desvanece**. Superficies planas en todo lo demás.
+- Únicos degradados permitidos: el **filete dorado que se desvanece** (y el gauge del sitio, excepción del usuario). El velo del hero
+  quedó en desuso en 1.3. Superficies planas en todo lo demás.
 
 ## 08 — Principios
 
@@ -183,7 +188,7 @@ cerca (borde inferior, barra lateral). Nunca texto blanco sobre oro: el botón d
 | Excel (`src/hoja.py`), notebooks, PDF | `references/excel-y-notebooks.md` |
 | Revisión de usabilidad / accesibilidad de cualquier pantalla | `references/apple-hig.md` → skill `apple-design` |
 
-**Presentaciones:** no hay plantilla oficial de Asuskf. Si se pide un deck, proponer: portada con el banner y el velo del hero, títulos
+**Presentaciones:** no hay plantilla oficial de Asuskf. Si se pide un deck, proponer: portada con el banner completo sobre verde insignia, títulos
 en Playfair blanco/oro sobre bosque, contenido en tema claro (marfil) con oro tinta, KPI en Roboto Mono, aviso legal en el pie; y
 **confirmar con el usuario antes** de fijarlo como estándar.
 

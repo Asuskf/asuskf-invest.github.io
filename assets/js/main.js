@@ -8,6 +8,7 @@ const MENOS = '−';   // signo menos real (regla de marca)
 const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
 const ORGANIZACION = 'https://asuskf.github.io/asuskf-invest.github.io/#organization';
 const reducirMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.documentElement.classList.add('js');
 
 // "−2.26%", "-2.26%" o "-2.26" → -2.26 ; celda vacía → null
 const leerPorcentaje = (texto) => {
@@ -33,19 +34,24 @@ const leerMatriz = () => [...document.querySelectorAll('#matriz tbody tr')].map(
 
 // =========================================
 // MATRIZ (heatmap)
+// Pasos por magnitud (tokens --ak-heat-*): weak |x| < 1 % · normal 1–7 % · strong > 7 %.
 // =========================================
+const pasoCalor = (valor) => {
+    const magnitud = Math.abs(valor);
+    return magnitud < 1 ? 'weak' : magnitud > 7 ? 'strong' : 'normal';
+};
+
 const pintarMatriz = (filas) => {
     filas.forEach(({ meses, total }) => {
         [...meses, total].forEach(td => {
             const valor = leerPorcentaje(td.textContent);
             if (td === total) td.classList.add('col-total');
             if (valor === null || valor === 0) {
-                td.classList.add('bg-neutral');
+                td.classList.add('heat-neutral');
                 return;
             }
-            td.textContent = formatearPorcentaje(valor);
-            if (valor > 0) td.classList.add('bg-positive', ...(valor > 7 ? ['bg-positive-strong'] : []));
-            else td.classList.add('bg-negative', ...(valor < -7 ? ['bg-negative-strong'] : []));
+            td.textContent = formatearPorcentaje(valor, { signo: true });
+            td.classList.add(`heat-${valor > 0 ? 'gain' : 'loss'}-${pasoCalor(valor)}`);
         });
     });
 };
@@ -71,6 +77,8 @@ const actualizarKpis = (filas) => {
     const acumulado = (totales.reduce((acc, t) => acc * (1 + t / 100), 1) - 1) * 100;
     escribir('[data-kpi="total"]', formatearPorcentaje(Math.trunc(acumulado), { signo: true, decimales: 0 }));
     escribir('[data-kpi="period"]', `${filas[filas.length - 1].anio}–${actual.anio}`);
+    const mesesPublicados = filas.reduce((n, f) => n + f.meses.filter(td => leerPorcentaje(td.textContent) !== null).length, 0);
+    escribir('[data-kpi="months"]', String(mesesPublicados));
 
     const ultimoMes = actual.meses.findLastIndex(td => leerPorcentaje(td.textContent) !== null);
     if (ultimoMes >= 0) {
@@ -165,47 +173,6 @@ const medirCtas = () => {
 };
 
 // =========================================
-// MODAL DE INFOGRAFÍA (se crea solo si hay una .infographic-img.clickable)
-// =========================================
-const inicializarModal = () => {
-    const imagenes = document.querySelectorAll('.infographic-img.clickable');
-    if (!imagenes.length) return;
-
-    const modal = document.createElement('div');
-    modal.className = 'modal';
-    modal.hidden = true;
-    modal.setAttribute('role', 'dialog');
-    modal.setAttribute('aria-modal', 'true');
-    modal.innerHTML = '<button type="button" class="close-modal" aria-label="Cerrar">&times;</button>'
-        + '<img class="modal-content" alt=""><p class="modal-caption" id="modal-caption"></p>';
-    modal.setAttribute('aria-labelledby', 'modal-caption');
-    document.body.appendChild(modal);
-
-    const cerrarBtn = modal.querySelector('.close-modal');
-    const imagenModal = modal.querySelector('.modal-content');
-    const leyenda = modal.querySelector('.modal-caption');
-    let origen = null;
-
-    const cerrar = () => { modal.hidden = true; origen?.focus(); };
-    imagenes.forEach(img => {
-        img.tabIndex = 0;
-        const abrir = () => {
-            origen = img;
-            imagenModal.src = img.currentSrc || img.src;
-            imagenModal.alt = img.alt;
-            leyenda.textContent = img.alt;
-            modal.hidden = false;
-            cerrarBtn.focus();
-        };
-        img.addEventListener('click', abrir);
-        img.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(); } });
-    });
-    cerrarBtn.addEventListener('click', cerrar);
-    modal.addEventListener('click', (e) => { if (e.target === modal) cerrar(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) cerrar(); });
-};
-
-// =========================================
 // PREGUNTAS FRECUENTES: al abrir una, se cierran las demás.
 // <details name="faq"> ya lo hace en navegadores actuales; esto cubre los anteriores.
 // =========================================
@@ -219,21 +186,23 @@ const iniciarAcordeon = () => {
 
 // =========================================
 // APARICIÓN AL HACER SCROLL
+// Solo para lo que está bajo el pliegue al cargar: sin JS, o si algo falla, todo queda visible.
 // =========================================
 const iniciarReveal = () => {
-    const elementos = document.querySelectorAll('.reveal');
-    if (reducirMovimiento || !('IntersectionObserver' in window)) {
-        elementos.forEach(el => el.classList.add('active'));
-        return;
-    }
+    if (reducirMovimiento || !('IntersectionObserver' in window)) return;
+    const pendientes = [...document.querySelectorAll('.reveal')]
+        .filter(el => el.getBoundingClientRect().top > window.innerHeight);
     const observador = new IntersectionObserver((entradas) => {
         entradas.forEach(entrada => {
             if (!entrada.isIntersecting) return;
-            entrada.target.classList.add('active');
+            entrada.target.classList.remove('reveal-pending');
             observador.unobserve(entrada.target);
         });
     }, { threshold: 0.10, rootMargin: '0px 0px -30px 0px' });
-    elementos.forEach(el => observador.observe(el));
+    pendientes.forEach(el => {
+        el.classList.add('reveal-pending');
+        observador.observe(el);
+    });
 };
 
 // =========================================
@@ -245,6 +214,5 @@ actualizarKpis(filas);
 iniciarGauge();
 publicarVideos();
 medirCtas();
-inicializarModal();
 iniciarAcordeon();
 iniciarReveal();

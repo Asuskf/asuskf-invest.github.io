@@ -46,7 +46,7 @@ As a static site implementation (`.github.io`), the repository is kept lightweig
 ├── assets/
 │   ├── css/tokens.css         # Brand tokens (copy of the skill's colors_and_type.css — do not edit here)
 │   ├── css/style.css          # Site styles, only var(--ak-*) values
-│   ├── js/main.js             # Heatmap, KPIs, gauge, video structured data, CTA tracking
+│   ├── js/main.js             # Heatmap, KPIs, gauge, video structured data, CTA tracking, FAQ accordion
 │   ├── fonts/                 # Playfair Display, Roboto, Roboto Mono (woff2, OFL 1.1)
 │   ├── images/                # Banner, badge sizes, OG image (1200×630), touch icon
 │   └── files/                 # CSV exports
@@ -59,7 +59,7 @@ As a static site implementation (`.github.io`), the repository is kept lightweig
 
 1. **Returns:** edit the rows of the `<table id="matriz">` in `index.html` (newest year on top; empty cells for future months).
    `main.js` recalculates the heatmap colors, YTD, cumulative return, and the "Datos hasta" date from that table.
-2. **Fallback figures for crawlers:** update the static text of `data-kpi="total"`, `data-kpi="ytd"`, and `data-kpi="updated"`
+2. **Fallback figures for crawlers:** update the static text of `data-kpi="total"`, `data-kpi="months"`, `data-kpi="ytd"`, and both `data-kpi="updated"`
    so bots that don't run JavaScript see the same numbers as visitors.
 3. **Videos:** in each `[data-video-id]` card, update the video id, link, thumbnail, title, description, `<time datetime>`,
    and `data-duration` (ISO 8601, e.g. `PT8M50S`). The `VideoObject` structured data is generated from the card.

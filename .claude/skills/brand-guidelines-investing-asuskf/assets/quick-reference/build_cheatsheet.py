@@ -77,11 +77,14 @@ for j in range(1, len(fin)):
 svg += [f'<text x="{W - MR + 6}" y="{y + 4:.1f}" class="etq">{n}</text>' for y, n in fin]
 svg.append("</svg>")
 
-HEAT = [("2024", [1.8, -0.6, 3.2, 0.1, -2.4, 4.9]), ("2025", [-1.1, 2.7, 0.0, -3.8, 1.2, 0.6])]
+HEAT = [("2024", [1.8, -0.6, 7.3, 0.4, -2.4, 4.9]), ("2025", [-1.1, 2.7, 0.0, -8.2, 11.2, 0.6])]
 
 
 def celda(v: float) -> str:
-    c = "g2" if v >= 3 else "g1" if v > 0.25 else "l2" if v <= -3 else "l1" if v < -0.25 else "n"
+    # pasos por magnitud (SKILL.md §05): weak |x| < 1 %, normal 1–7 %, strong > 7 %
+    m = abs(v)
+    paso = "0" if m < 1 else "2" if m > 7 else "1"
+    c = "n" if v == 0 else ("g" if v > 0 else "l") + paso
     return f'<td class="{c}">{"+" if v > 0 else "−" if v < 0 else ""}{abs(v):.1f}%</td>'
 
 
@@ -103,7 +106,7 @@ main{{max-width:var(--ak-container);margin:0 auto;padding:var(--ak-space-6) var(
 .marca{{display:flex;align-items:center;gap:var(--ak-space-3)}}
 .ak-logo{{height:42px;width:auto;border-radius:var(--ak-radius-pill);border:1.5px solid var(--ak-gold)}}
 .ak-wordmark{{font-family:var(--ak-font-heading);font-weight:700;font-size:20px;color:var(--ak-gold-ink);letter-spacing:1px}}
-.ak-eyebrow{{font-size:var(--ak-fs-eyebrow);text-transform:uppercase;letter-spacing:var(--ak-track-eyebrow);color:var(--ak-gold-ink);font-weight:500}}
+.hoja-version{{font-size:var(--ak-fs-small);color:var(--ak-text-muted)}}
 .ak-btn{{display:inline-flex;align-items:center;min-height:var(--ak-hit-min);padding:0 22px;border-radius:var(--ak-radius);background:var(--ak-gold);
  color:var(--ak-on-gold);font:700 var(--ak-fs-small) var(--ak-font-body);text-transform:uppercase;letter-spacing:1px;border:0;cursor:pointer;
  transition:background-color var(--ak-dur) var(--ak-ease),transform var(--ak-dur-fast) var(--ak-ease),box-shadow var(--ak-dur) var(--ak-ease)}}
@@ -141,6 +144,7 @@ section>h2{{font-size:var(--ak-fs-h2);margin:var(--ak-space-2) 0 var(--ak-space-
 .ak-heat td:first-child{{font:700 14px var(--ak-font-heading);color:var(--ak-text);text-align:left;background:transparent}}
 .ak-heat th{{color:var(--ak-gold-ink);font:500 var(--ak-fs-label) var(--ak-font-body);text-transform:uppercase;letter-spacing:.5px}}
 .ak-heat .g2{{background:var(--ak-heat-gain-strong);color:var(--ak-heat-gain-strong-ink)}}.ak-heat .g1{{background:var(--ak-heat-gain);color:var(--ak-heat-gain-ink)}}
+.ak-heat .g0{{background:var(--ak-heat-gain-weak);color:var(--ak-heat-gain-weak-ink)}}.ak-heat .l0{{background:var(--ak-heat-loss-weak);color:var(--ak-heat-loss-weak-ink)}}
 .ak-heat .n{{background:var(--ak-heat-neutral);color:var(--ak-text-muted)}}
 .ak-heat .l1{{background:var(--ak-heat-loss);color:var(--ak-heat-loss-ink)}}.ak-heat .l2{{background:var(--ak-heat-loss-strong);color:var(--ak-heat-loss-strong-ink)}}
 .ak-card{{min-width:0}}.desliza{{overflow-x:auto}}svg{{width:100%;max-width:760px;height:auto;display:block}}svg .eje{{font:11px var(--ak-font-body);fill:var(--ak-axis)}}svg .etq{{font:12px var(--ak-font-body);fill:var(--ak-text)}}
@@ -150,23 +154,23 @@ ul.reglas{{margin:0;padding-left:var(--ak-space-5)}}ul.reglas li{{margin:var(--a
 .no{{color:var(--ak-loss);font-weight:700}}.si{{color:var(--ak-gain);font-weight:700}}
 </style></head><body>
 <header class="ak-nav"><div class="marca"><img class="ak-logo" src="data:image/png;base64,{LOGO}" alt="Asuskf Investing"><span class="ak-wordmark">Asuskf Investing</span></div>
-<div style="display:flex;gap:var(--ak-space-3);align-items:center"><span class="ak-eyebrow">Brand cheatsheet v1.0</span>
+<div style="display:flex;gap:var(--ak-space-3);align-items:center"><span class="hoja-version">Brand cheatsheet v1.3</span>
 <button class="ak-btn ak-btn--ghost" id="tema" aria-pressed="false">Tema claro</button></div></header>
 <main>
-<div class="hero"><div class="ak-eyebrow">Inversión cuantitativa e inteligencia artificial</div>
+<div class="hero">
 <h1>ASUSKF INVESTING</h1><hr class="ak-divider"><div class="sub">Gestión sistemática · Control de riesgo · Decisiones basadas en datos</div>
 <div class="stats"><div><b>+00.0%</b><span>Cifra ejemplo</span></div><div><b>0 años</b><span>Cifra ejemplo</span></div><div><b>AI + Quant</b><span>Metodología</span></div></div>
 <p class="ak-legal" style="margin-top:var(--ak-space-4)">Cifras de ejemplo para mostrar el estilo; no son rendimientos reales.</p></div>
 
-<section><div class="ak-eyebrow">02 · Color</div><h2>Paleta de marca</h2>
+<section><h2>Paleta de marca</h2>
 <div class="grid">{swatches(SWATCH)}</div>
 <p class="ak-legal">Proporción: bosque ≈ 85 % · texto 5-10 % · oro ≤ 10 % · verde/rojo solo como estado de ganancia/pérdida.
 En tema claro el oro no se usa como texto (1.9:1): se usa el oro tinta (5.5:1).</p></section>
 
-<section><div class="ak-eyebrow">Gráficas</div><h2>Series categóricas (orden fijo, validadas para daltonismo)</h2>
+<section><h2>Series categóricas (orden fijo, validadas para daltonismo)</h2>
 <div class="grid">{swatches(SERIES)}</div></section>
 
-<section class="tipo"><div class="ak-eyebrow">03 · Tipografía</div><h2>Playfair Display · Roboto · Roboto Mono</h2>
+<section class="tipo"><h2>Playfair Display · Roboto · Roboto Mono</h2>
 <div class="grid2"><div class="ak-card"><h3>Títulos — Playfair Display</h3><p style="font:700 40px/1.1 var(--ak-font-heading);color:var(--ak-gold-ink)">Valor a largo plazo</p>
 <p style="font:400 22px var(--ak-font-heading);color:var(--ak-text-strong)">Investment Research · Market Insights</p></div>
 <div class="ak-card"><h3>Texto — Roboto</h3><p>Invertimos con análisis cuantitativo y visión macroeconómica para identificar oportunidades con ventaja estadística.
@@ -174,7 +178,7 @@ Cuerpo 15 px, interlineado 1.65.</p><p style="font-weight:300;letter-spacing:2px
 <div class="ak-card"><h3>Cifras — Roboto Mono</h3><div class="ak-kpi ak-kpi--gain">+12.4%</div><div class="ak-kpi ak-kpi--loss">−3.1%</div>
 <p class="ak-num" style="color:var(--ak-text-muted)">2026-10-08 · 1,234.56 · 0.87</p></div></div></section>
 
-<section><div class="ak-eyebrow">05 · Componentes</div><h2>Botones, tarjetas, estado</h2>
+<section><h2>Botones, tarjetas, estado</h2>
 <div class="grid2"><div class="ak-card"><h3>Botones</h3><div style="display:flex;gap:var(--ak-space-3);flex-wrap:wrap">
 <button class="ak-btn">Copiar portafolio</button><button class="ak-btn ak-btn--ghost">Ver insights</button></div>
 <p class="ak-legal">Alto mínimo 44 px (Apple HIG) · texto bosque sobre oro (8.7:1) · foco visible.</p></div>
@@ -182,12 +186,12 @@ Cuerpo 15 px, interlineado 1.65.</p><p style="font-weight:300;letter-spacing:2px
 <span class="ak-badge ak-badge--loss">▼ −0.8 pp</span></div><p class="ak-legal">Color + signo/flecha: nunca solo color.</p></div>
 <div class="ak-card"><h3>Heatmap de rendimientos (ilustrativo)</h3><div class="desliza">{heat}</div><p class="ak-legal">El número va en cada celda: el rojo/verde no es legible para todos.</p></div></div></section>
 
-<section><div class="ak-eyebrow">Gráficas</div><h2>Línea — índice base 100 (datos ilustrativos)</h2>
+<section><h2>Línea — índice base 100 (datos ilustrativos)</h2>
 <div class="ak-card"><div class="leyenda"><span><i style="background:var(--ak-series-1)"></i>Estrategia A</span><span><i style="background:var(--ak-series-2)"></i>Estrategia B</span>
 <span><i style="background:var(--ak-series-3)"></i>Índice</span></div>{"".join(svg)}
 <p class="ak-legal">Un eje · leyenda + etiqueta directa · pasa el mouse sobre un punto · verde/rojo nunca como serie.</p></div></section>
 
-<section><div class="ak-eyebrow">Reglas</div><h2>Sí / No</h2>
+<section><h2>Sí / No</h2>
 <div class="grid2"><div class="ak-card"><h3>Sí</h3><ul class="reglas"><li><span class="si">✔</span> Tokens <code>var(--ak-…)</code>, fuentes locales</li>
 <li><span class="si">✔</span> Insignia desde archivo, con su borde dorado</li><li><span class="si">✔</span> Cifras en Roboto Mono con signo</li>
 <li><span class="si">✔</span> Aviso: no es recomendación de inversión</li><li><span class="si">✔</span> Revisión de usabilidad con la skill apple-design</li></ul></div>
